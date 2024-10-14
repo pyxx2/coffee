@@ -1,0 +1,96 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('img/PPP.jpg'); /* 替换为实际图片路径 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+body{
+    background-position: center top 7px;
+}
+
+header {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px); /* 减去左右padding的宽度 */
+    background: transparent;
+    padding: 10px 0;
+    z-index: 1000; /* 确保在内容上方 */
+}
+
+.header-logo a {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.register-form {
+    background: rgba(0, 0, 0, 0.34);
+    border-radius: 5px;
+    box-shadow: 5px 5px rgba(30, 22, 22, 0.22); /* 根据需要决定是否添加阴影 */
+    padding: 10px 50px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff; /* 如果背景较暗，文本颜色应为白色或亮色 */
+    background: transparent; /* 背景透明 */
+}
+
+.input-group label {
+
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; /* 如果背景较暗，标签颜色应为白色或亮色 */
+    background: transparent; /* 背景透明 */
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px; /* 增加上下方的外边距 */
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.47); /* 为输入框添加白色背景 */
+    box-sizing: border-box;
+    position:relative;
+    left: -10px;
+
+    color: #333;
+}
+
+.register-form h1,
+.input-group label {
+    color: #fff; /* 假设背景较暗，文本颜色设置为白色 */
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5c67f2; /* 蓝色背景，50%透明度 */
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 30px; /* 增加下边距 */
+}
+
+.register-button:hover {
+    background-color: #4a54e1;
+}

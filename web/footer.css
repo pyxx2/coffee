@@ -1,0 +1,49 @@
+.footer {
+    display: flex;
+    justify-content: space-around; /* 根据需要调整子元素的水平分布方式 */
+    align-items: center; /* 垂直居中对齐所有子元素 */
+    flex-wrap: wrap; /* 防止子元素被压缩或拉伸 */
+}
+.footer1 {
+    width: 390px;
+    height: 100px;
+    margin: 50px 10px;
+}
+
+
+.footer3 {
+    width: 90px;
+    height: 90px;
+    margin: 30px 20px;
+}
+
+
+
+.footer3 {
+    width: 90px;
+    height: 90px;
+    margin: 30px 20px;
+}
+
+.footer4 {
+    border-collapse: collapse;
+    width: 25%;
+    margin: 20px 20px;
+}
+
+.footer4 td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px dotted #ddd;
+    color: #363636;
+    text-decoration: none;
+}
+
+.footer-bar {
+    margin: 15px auto 10px;
+    padding-top: 15px;
+    color: #616161;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px dashed #bdbdbd;
+}

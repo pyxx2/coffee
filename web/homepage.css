@@ -1,0 +1,301 @@
+/* 自动轮播样式 */
+.banner-container{
+    width: 1200px;
+    height:480px;
+    /* 轮播图居中 */
+    margin:0 auto;
+    margin-bottom: 10px;
+    /* 隐藏超出展示容器的内容 */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.banner-container .banner-img-container {
+    width:3600px;
+    height:480px;
+    overflow: hidden;
+    position: absolute;
+    /* 开启弹性盒，让图片横向排列 */
+    display: flex;
+    animation: run 10s ease infinite;
+}
+.banner-container .banner-img-container img{
+    width: 1200px;
+    height:100%;
+}
+/* 动画关键帧 */
+@keyframes run {
+    0%,30%{
+        /* margin-left: 0; */
+        transform: translateX(0);
+    }
+    40%,70%{
+        /* margin-left: -1200px;; */
+        transform: translateX(-1200px);
+    }
+    80%,90%{
+        /* margin-left: -2400px; */
+        transform: translateX(-2400px);
+    }
+    100%{
+        /* margin-left: 0; */
+        transform: translateX(0);
+    }
+}
+
+.title{
+    margin:0 auto 20px;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+}
+.member-title {
+    color: #363636;
+    margin: 0;
+    font-weight: bold;
+    font-size: 30px;
+}
+.park .title {
+    display: flex;          /* 开启Flexbox布局 */
+    align-items: center;    /* 垂直居中对齐所有子元素 */
+    justify-content: center; /* 根据需要调整，以便于分配空间 */
+    width: 100%;
+}
+.park-title {
+    margin-top: 40px;
+    margin-left: 10px;      /* 与左侧星星的间距 */
+    display: inline-block;
+    font-weight: bold;
+    font-size: 30px;
+    color: #363636;
+}
+.title-star-inner {
+    width: auto;            /* 设置为自动，让flex子元素自动调整宽度 */
+    height: auto;
+    position: relative;
+}
+.title-star1,
+.title-star2,
+.title-star3 {
+    margin-top: 80px;
+    height: 16px;
+    width: 16px;
+    position: static;      /* 在flex布局中使用static */
+}
+.title-star2 {
+    margin-top: 10px;
+    margin-left: 8px;     /* 第二个星星与第一个星星的间距 */
+    position: relative;
+}
+.title-star3 {
+    height: 8px;
+    width: 8px;
+    position: absolute; /* 绝对定位相对于.title-star-inner */
+    margin-left: 0;
+    margin-top: 5px; /* 调整star3相对于star2的垂直位置 */
+}
+
+.title a {
+    float: right;
+    width: 20%;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: #337ab7;
+    text-decoration: none;
+    border-bottom: none;
+    display: inline-block;
+}
+.title a:hover {
+    color: #363636;
+    text-decoration: underline;
+}
+
+.member {
+    list-style-type: none;
+    padding: 20px 10px;
+    background: #f1f2f3;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.member-part {
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto; /* 居中显示 */
+    padding: 0;
+}
+.cpBox {
+    flex: 1;
+    min-width: 180px;
+    max-width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+.cpBox:last-child {
+    margin-right: 0; /* 最后一个cpBox没有右侧外边距 */
+}
+.cpBox img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: all 0.2s linear;
+}
+.cpBox:hover img {
+    border: 4px solid #616161;
+    transform: scale(1.01);
+}
+
+.movies{
+    list-style-type: none;
+    width: 100%;
+    height:380px;
+    margin-bottom: 10px;
+    background: #0a193c;
+}
+.movie-left,.movie-right{
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+.movie-left img{
+    width:100%;
+    height: 380px;
+}
+.movie-right{
+    margin-top: 80px;
+}
+.movie-right h3{
+    margin:0;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    color: #FFFfff;
+}
+.movie-right p{
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #FFFfff;
+}
+.movie-right i{
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #FFFfff;
+}
+
+.mall{
+    list-style-type: none;
+    width: 100%;
+    padding-left:10px;
+    height:380px;
+    margin-bottom: 10px;
+    background: #e5effd;
+}
+.mall-right{
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+.mall-left{
+    margin-top: 90px;
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+.mall-content1{
+    padding-left: 80px;
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    color: #494b67;
+}
+.mall-content2{
+    padding-left: 80px;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    font-weight: bold;
+    color: #1c1e41;
+}
+.mall-content3{
+    padding-left: 80px;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    color: #494b67;
+}
+.goods{
+    background-color: #2d80fa;
+    border: none;
+    border-radius: 64px;
+    color:white;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 40px 80px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+}
+.goods:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,.24),
+    0 17px 50px 0 rgba(0,0,0,.19);
+}
+.mall-right img{
+    width:100%;
+    height: 380px;
+}
+
+.park {
+    list-style-type: none;
+    width: 100%;
+    padding-left:10px;
+    background: #f1f2f3;
+    height:590px;
+    margin-bottom: 10px;
+}
+.shanghai,
+.hongkong {
+    margin-top: 30px;
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height:10px;
+}
+.shanghai a,
+.hongkong a{
+    color: black;
+    text-decoration: none;
+}
+.park-picture{
+    border: none;
+    margin: 0 auto;
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+}
+.shanghai:hover img,.hongkong:hover img{
+    transform: scale(1.1);
+    transition: all 2s;
+}
+.shanghai h3,.hongkong h3{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom:0;
+}
+.shanghai p,.hongkong p{
+    font-size: 18px;
+}
+.shanghai i,.hongkong i{
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: underline;
+}

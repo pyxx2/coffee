@@ -1,0 +1,51 @@
+.disney-logo {
+    border: none;
+    float: left;
+    width: 150px;
+    height: 60px;
+}
+.navigation {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.navigation li {
+    line-height: 60px;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+
+.navigation a {
+    display: block;
+    color: black;
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    text-decoration: none;
+    position: relative;
+    z-index: 1000;
+    background-color:  #FFFfff;
+}
+
+.navigation a:hover {
+    color: #FFFfff;
+    background-color: #8B8989;
+}
+
+.navigation li ul {
+    position: absolute;
+    display: none;
+    background-color:  #FFFfff;
+    left: 0;
+    top: 60px;
+    padding-left: 0;
+    z-index: 1001;
+    list-style-type: none;
+}
+
+.navigation li:hover ul {
+    display: block;
+}

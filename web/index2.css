@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: rgba(3.5,2.8,2.5,0.8);
+    height: 80px;
+    width: 100%;
+    position:fixed;
+    z-index: 1000;
+}
+h1{
+    color:white;
+    font-size: 36px;
+    position: absolute;
+    left: 40px;
+    line-height: 80px;
+}
+.login{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    right: 12vw;
+    top:15px;
+    padding: 5px;
+    line-height: 40px;
+}
+.quit{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    right: 5vw;
+    top:15px;
+    padding: 5px;
+    line-height: 40px;
+}
+.quit:hover{
+    text-decoration: underline;
+}
+.news{
+    background-color: antiquewhite;
+    color: white;
+    height: 800px;
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.news h2{
+    font-size: 60px;
+    color: beige;
+    letter-spacing: 8px;
+}
+.good{
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 150px 20px;
+}
+.good h4{
+    font-size: 24px;
+    height: 20px;
+    color: red;
+    position: relative;
+    left: 5px;
+}
+.go{
+    width:350px;
+    height: 380px;
+    text-align: center;
+    margin: 0px 10px -10px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+.go:hover {
+    /* 当鼠标悬停在盒子上时，应用这些样式 */
+    transform: scale(1.1); /* 放大1.1倍 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加阴影，增强浮动效果 */
+}
+.good a{
+    width:300px;
+    height: 340px;
+    text-align: center;
+    margin: 10px 15px 20px;
+    text-decoration: none;
+}
+.good a:hover{
+     text-decoration: underline;
+ }
+.good img{
+    width:100%;
+    margin-bottom: 10px;
+}
+.good h3{
+    color: black;
+    font-size: 15px;
+    height: 30px;
+    margin-bottom: 15px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.good p{
+    color: red;
+    font-family: 微软雅黑;
+    font-weight: bold;
+    position: relative;
+    left: 5px;
+    font-size: 30px;
+    height: 20px;
+
+}
+.fixed-window {
+    position: fixed; /* 固定定位 */
+    bottom: 30px; /* 距离底部20px */
+    right: 30px; /* 距离右侧20px */
+    display: flex;
+    justify-content: flex-end; /* 右侧对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    background-color: rgba(41,41,41,0.8); /* 浮窗背景色 */
+    padding: 10px; /* 内边距 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 轻微的阴影效果 */
+    border-radius: 5px; /* 边框圆角 */
+    z-index: 1000; /* 确保浮窗在页面其他内容之上 */
+    width: 150px;
+    height: 60px;
+}
+.fixed-window a{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    top:6px;
+    bottom: 6px;
+    right: 25px;
+    padding: 5px;
+    line-height: 40px;
+}
+.fixed-window a:hover{
+    text-decoration: underline;
+}
+.newsletter{
+    background-color: black;
+    color: aliceblue;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.newsletter p{
+    margin-bottom: 20px;
+}
+.newsletter input,.newsletter button{
+    background-color: transparent;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+.newsletter input{
+    width:200px;
+    margin-right: 15px;
+}
+.newsletter button{
+    width: 80px;
+    cursor: pointer;
+ }
+input::placeholder{
+    color: aliceblue;
+}
+input:focus{
+    outline: none;
+    border-color: aliceblue;
+}
+footer p{
+    color: black;
+}
