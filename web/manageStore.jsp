@@ -18,8 +18,9 @@
 %>
 
 <header>
-    <a href="manage.jsp" style="margin-left: 80px"><h2 style="color: #FFFfff">返回</h2></a>
-    <!-- 可以在这里添加网站头部内容 -->
+    <div class="header-logo">
+        <a href="manage.jsp" style="color: #FFFfff">返回</a>
+    </div>
 </header>
 
 <div class="cart-container">

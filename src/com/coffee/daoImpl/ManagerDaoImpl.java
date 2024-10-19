@@ -3,11 +3,13 @@ package com.coffee.daoImpl;
 import com.coffee.dao.ManagerDao;
 import com.coffee.db.DBConnection;
 import com.coffee.vo.Goods;
+import com.coffee.vo.Order;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class ManagerDaoImpl implements ManagerDao {
@@ -78,6 +80,55 @@ public class ManagerDaoImpl implements ManagerDao {
             ps = con.prepareStatement(sql);
             ps.setInt(1,num);
             ps.setInt(2,goodId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public ArrayList<Order> selectAllOrder() {
+        DBConnection db = new DBConnection();
+        con = db.getCon();
+
+        String sql = "SELECT * FROM `order`";
+        ArrayList<Order> orders = new ArrayList<>(); // 创建一个存储订单的列表
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // 从结果集中获取订单信息
+                int orderId = rs.getInt("order_id");
+                int goodsId = rs.getInt("goods_id");
+                int num = rs.getInt("num");
+                LocalDateTime orderTime = rs.getTimestamp("order_time").toLocalDateTime(); // 使用 Timestamp 转换为 LocalDateTime
+                String status = rs.getString("status");
+                double price = rs.getDouble("price");
+                String userName=rs.getString("username");
+
+                // 创建一个 Order 对象并设置属性
+                Order order = new Order(userName, orderId, goodsId, num, orderTime, status, price);
+
+                // 将订单对象添加到列表
+                orders.add(order);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return orders; // 返回包含订单的列表
+    }
+
+    @Override
+    public void updateStatus(int orderId) {
+        DBConnection db = new DBConnection();
+        con=db.getCon();
+        String status="已完成";
+        String sql = "update `order` set status=? where order_id = ?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1,status);
+            ps.setInt(2,orderId);
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

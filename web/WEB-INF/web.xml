@@ -77,4 +77,12 @@
         <servlet-name>ChangeNumServlet</servlet-name>
         <url-pattern>/ChangeNumServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateOrderServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.UpdateOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateOrderServlet</servlet-name>
+        <url-pattern>/UpdateOrderServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

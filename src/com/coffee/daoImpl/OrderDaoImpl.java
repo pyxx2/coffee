@@ -59,7 +59,6 @@ public class OrderDaoImpl implements OrderDao {
 
         String sql = "SELECT * FROM `order` WHERE `username` = ?";
         ArrayList<Order> orders = new ArrayList<>(); // 创建一个存储订单的列表
-
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, userName);
