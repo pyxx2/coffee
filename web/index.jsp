@@ -1,18 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 辣椒油
-  Date: 2024/7/9
-  Time: 16:33
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>瑞幸coffee</title>
-    <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="footer.css">
-    <script type="text/javascript" src="canvasStar.js"></script>
+    <link rel="stylesheet" href="style/homepage.css">
+    <link rel="stylesheet" href="style/navigation.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <script type="text/javascript" src="style/canvasStar.js"></script>
 
     <style>
         img.disney-logo {
@@ -27,6 +20,12 @@
 
 <body bgcolor="#ffffff">
 <canvas id="canvas"></canvas>
+<%
+    String userName=(String) request.getAttribute("userName");
+    if(userName==null){
+        userName=request.getParameter("userName");
+    }
+%>
 <header>
     <img class="disney-logo" src="image/logo.png">
     <div>
@@ -43,13 +42,8 @@
             </li>
             <li><a href="#">我的</a>
                 <ul>
-                    <li><a href="Shanghai.jsp">购物车</a></li>
-                    <li><a href="Hongkong.jsp">历史订单</a></li>
-                </ul>
-            </li>
-            <li><a href="echarts_data.jsp">关于我们</a>
-                <ul>
-                    <li><a href="activity.jsp">品牌故事</a></li>
+                    <li><a href="goodsCar.jsp?userName=<%=userName%>">购物车</a></li>
+                    <li><a href="userOrder.jsp?userName=<%=userName%>">历史订单</a></li>
                 </ul>
             </li>
         </ul>
@@ -67,7 +61,7 @@
 <div class="member">
     <div class="title">
         <h2 class="member-title">点餐商城</h2>
-        <a href="shopping.jsp">More&gt;&gt;</a>
+        <a href="shopping.jsp?userName=<%=userName%>">More&gt;&gt;</a>
     </div>
     <div class="member-part">
         <div class="cpBox">

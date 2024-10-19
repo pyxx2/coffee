@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/PPP.jpg'); /* 替换为实际图片路径 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0; /* 确保没有默认的外边距 */
+}
+body{
+    background-position: center top -85px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.header-logo {
+    margin: 0;
+    padding: 0 20px; /* 根据需要调整内边距 */
+}
+
+.header-logo a {
+    color: #333; /* 文字颜色 */
+    font-size: 20px;
+    text-decoration: none; /* 去除下划线 */
+    font-weight: bold; /* 加粗文字 */
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.form-container {
+    background: rgba(0, 0, 0, 0.35); /* 黑色背景，透明度 */
+    border-radius: 10px; /* 边框圆角 */
+    padding: 20px; /* 内边距 */
+    min-width: 300px; /* 最小宽度 */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row; /* 如果需要水平排列表单元素 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+h1 {
+    color: white; /* 设置文本颜色为白色 */
+}
+
+.login-form input {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* 添加这个属性以确保填充不会增加宽度 */
+    margin-right: 20px;
+}
+
+
+.login-form button {
+    width: 95%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5c67f2;
+    color: white;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #4a54e1;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: rgba(221, 221, 221, 0.7);
+    font-size: 0.9em;
+    text-align: right;
+    text-decoration: none; /* 添加这行代码去除下划线 */
+    text-align: left;
+}
+.forgot-password:hover {
+    color: #334344;
+}
+
+.overlay-panel {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.33); /* 黑色背景，透明度 */
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 20px;
+    max-width: 300px;
+    color: #dddddd;
+}
+.overlay-panel h1 {
+    font-size: 25px; /* 将字体大小设置为14px，您可以根据需要调整这个值 */
+    color: #dddddd;
+}
+
+.signup-button {
+    padding: 10px;
+    border: none;
+    margin-bottom: 11px;
+    border-radius: 5px;
+    background-color: #6fb936;
+    color: white;
+    cursor: pointer;
+
+}
+
+.signup-button:hover {
+    background-color: #5ca124;
+}

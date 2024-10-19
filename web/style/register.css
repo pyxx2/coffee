@@ -2,7 +2,7 @@ body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('img/PPP.jpg'); /* 替换为实际图片路径 */
+    background-image: url('../img/PPP.jpg'); /* 替换为实际图片路径 */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

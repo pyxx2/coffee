@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/PPP.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.header-logo {
+    margin: 0;
+    padding: 0 20px; /* 根据需要调整内边距 */
+}
+
+.header-logo a {
+    color: #333; /* 文字颜色 */
+    font-size: 20px;
+    text-decoration: none; /* 去除下划线 */
+    font-weight: bold; /* 加粗文字 */
+}
+.cart-container {
+    width: 80%;
+    position: relative;
+    top: 35px;
+    margin: 20px auto;
+    background: rgba(72, 68, 68, 0.65);
+    padding: 20px;
+    min-height: 600px;
+}
+.cart-container h1{
+    font-size: 36px;
+    position: relative;
+    left: 15px;
+    color: white;
+}
+
+.cart-header {
+    display: flex;           /* 使用Flexbox布局 */
+    justify-content: space-between; /* 水平分布空间 */
+    padding: 10px 0;         /* 顶部和底部的内边距 */
+    float: left;
+}
+
+.cart-header label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.list-container{
+    width: 90%;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.66);
+    padding: 20px;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    flex-direction: row; /* 水平排列子元素 */
+}
+
+label {
+    /* 放大复选框旁边的文本 */
+    font-size: 15px; /* 根据需要调整 */
+    cursor: pointer;
+    color: #dddddd;
+    margin-right: 13px;
+}
+
+.cart-header input[type="checkbox"] {
+    width: 18px; /* 复选框大小 */
+    height: 20px;
+    accent-color: rgba(126, 125, 125, 0.5); /* 改变复选框的颜色 */
+    margin-right: 15px; /* 增加复选框右侧外边距 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* 确保有足够的内容推下浮窗 */
+}
+
+.fixed-window {
+    position: fixed; /* 固定定位 */
+    bottom: 30px; /* 距离底部20px */
+    right: 30px; /* 距离右侧20px */
+    display: flex;
+    justify-content: flex-end; /* 右侧对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    background-color: #fff; /* 浮窗背景色 */
+    padding: 10px; /* 内边距 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 轻微的阴影效果 */
+    border-radius: 5px; /* 边框圆角 */
+    z-index: 1000; /* 确保浮窗在页面其他内容之上 */
+}
+
+.total-info {
+    margin-right: 20px; /* 合计信息和结算按钮之间的间隔 */
+}
+
+.label {
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.2em;
+}
+
+.settle-btn {
+    padding: 5px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #fd742c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* 结算按钮的外边距 */
+}
+
+.settle-btn:hover {
+    background-color: #fd600d;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.check-and-image {
+    display: flex;
+    align-items: center;
+}
+
+.item-checkbox {
+    width: 18px; /* 根据需要调整复选框大小 */
+    height: 24px;
+    margin-right: 10px; /* 增加复选框和图片之间的间隔 */
+}
+
+.check-and-image-images {
+    align-items: center;
+}
+
+.item-image {
+    width: 120px; /* 根据需要调整图片大小 */
+    height: auto;
+    margin-right: 20px; /* 增加图片和商品详情之间的间隔 */
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name-and-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.item-name {
+    margin-right:50px ; /* 将商品名称推向左侧 */
+    max-width: 30%;
+}
+
+.item-price {
+    display: flex;
+    position: relative;
+    right: 50px;
+    font-weight: bold;
+    font-size: 25px;
+    justify-content: flex-end;
+}
+
+.quantity-input {
+    width: 60px;
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+}
+
+.quantity-buttons{
+    margin: 0;
+}
+
+.btn-decrease,
+.btn-increase {
+    margin: 0;
+    height: 25px ;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 使操作按钮垂直排列并向左对齐 */
+    margin-left: auto;
+}
+.btn-remove,
+.btn-favorite {
+    margin: 5px 10px; /* 删除和收藏按钮上下间距，根据需要调整 */
+}
+
+.btn-favorite{
+    width: 100px;
+    padding: 5px 9px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #fd742c;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-favorite:hover {
+    background-color: #fd600d;
+}
+
+.btn-remove{
+    width: 60px;
+    padding: 5px 9px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #fd742c;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-remove:hover {
+    background-color: #fd600d;
+}

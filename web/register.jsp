@@ -4,12 +4,12 @@
     <%--    <meta charset="UTF-8">--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>用户注册页面</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="style/register.css">
 </head>
 <body>
 <header>
     <div class="header-logo">
-        <a href="shopping.jsp">返回商城首页</a>
+        <a href="login.jsp">去登录</a>
     </div>
 </header>
 <div class="register-container">

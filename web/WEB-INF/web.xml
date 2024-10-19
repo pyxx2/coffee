@@ -11,4 +11,70 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SuccessServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.SuccessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SuccessServlet</servlet-name>
+        <url-pattern>/SuccessServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BookingServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.BookingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingServlet</servlet-name>
+        <url-pattern>/BookingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GoodsCarServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.GoodsCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GoodsCarServlet</servlet-name>
+        <url-pattern>/GoodsCarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>orderServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.orderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>orderServlet</servlet-name>
+        <url-pattern>/orderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ManagerLoginServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.ManagerLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerLoginServlet</servlet-name>
+        <url-pattern>/ManagerLoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ChangeNumServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.ChangeNumServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeNumServlet</servlet-name>
+        <url-pattern>/ChangeNumServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

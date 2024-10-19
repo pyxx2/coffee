@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="myWeb">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="myWeb.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="coffee" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="jsp-api" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.15" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="coffee/web/Web" />
+    </root>
+  </artifact>
+</component>

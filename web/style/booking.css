@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0; /* 移除了20px的内边距，因为我们使用背景图像 */
     font-family: Arial, sans-serif;
-    background-image: url('img/PPP.jpg');
+    background-image: url('../img/PPP.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

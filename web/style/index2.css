@@ -42,8 +42,8 @@ h1{
 .news{
     background-color: antiquewhite;
     color: white;
-    height: 800px;
-    background-image: url("img/background.jpg");
+    height: 500px;
+    background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
