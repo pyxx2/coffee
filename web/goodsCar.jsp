@@ -53,7 +53,7 @@
         <div class="check-and-image">
             <input type="checkbox" class="item-checkbox" data-price="<%=gc.getPrice()%>" data-num="<%=gc.getSelfnum()%>" onchange="updateTotal()">
             <a href="BookingServlet?goodsid=<%=goodsid%>&userid=<%=userid%>" class="product-photo-link">
-                <img src="img/<%=gc.getImage()%>.jpg" alt="商品图片" class="item-image">
+                <img src="img/<%=gc.getImage()%>" alt="商品图片" class="item-image">
             </a>
         </div>
         <div class="item-details">

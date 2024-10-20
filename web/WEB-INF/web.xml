@@ -85,4 +85,20 @@
         <servlet-name>UpdateOrderServlet</servlet-name>
         <url-pattern>/UpdateOrderServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>UploadImageServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.UploadImageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadImageServlet</servlet-name>
+        <url-pattern>/UploadImageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddGoodsServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.AddGoodsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddGoodsServlet</servlet-name>
+        <url-pattern>/AddGoodsServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

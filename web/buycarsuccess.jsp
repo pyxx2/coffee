@@ -41,7 +41,7 @@
             <div class="d">
             <div style="width: 37%;position: relative;left: 20px;top: 12px;">
                 <a href="BookingServlet?userName=<%=userName%>&goodsid=<%=goodsid%>" class="product-photo-link">
-                    <img src="img/<%=g.getImage()%>.jpg" alt="商品图片" class="item-image">
+                    <img src="img/<%=g.getImage()%>" alt="商品图片" class="item-image">
                 </a>
             </div>
             <div style="width: 63%;position: relative;top: 30px;left: -20px">
@@ -62,7 +62,7 @@
             <div class="goods">
                 <div class="pic">
                     <a href="BookingServlet?userid=<%=userName%>&goodsid=<%=gs.getId()%>" class="product-photo-link">
-                        <img src="img/<%=gs.getImage()%>.jpg" alt="商品图片" class="product-photo">
+                        <img src="img/<%=gs.getImage()%>" alt="商品图片" class="product-photo">
                     </a>
                 </div>
                 <div class="info">

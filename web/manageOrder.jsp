@@ -60,11 +60,9 @@
 
                 <!-- 添加完成订单按钮 -->
                 <button class="complete-order-btn" data-order-id="<%=orderId%>">完成订单</button>
-
             </div>
         </div>
     </div>
-
     <%}}%>
 </div>
 <script>

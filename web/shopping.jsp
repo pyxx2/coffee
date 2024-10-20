@@ -59,7 +59,7 @@
                 <a href="booking.jsp?goodsid=<%=g.getId()%>&userName=<%=u.getName()%>">
 
                 <div>
-                        <img src="img/<%=g.getImage()%>.jpg" >
+                        <img src="img/<%=g.getImage()%>" >
                         <h3><%=g.getName()%></h3>
                     </div>
                 </a>

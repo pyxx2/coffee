@@ -134,4 +134,29 @@ public class ManagerDaoImpl implements ManagerDao {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public boolean addGoods(String name, Float price, int num, String img, String msg) {
+        DBConnection db = new DBConnection();
+        con=db.getCon();
+        String sql="insert into goods values(id,?,?,?,?,?)";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1,name);
+            ps.setFloat(2,price);
+            ps.setInt(3,num);
+            ps.setString(4,img);
+            ps.setString(5,msg);
+            int flag2 = ps.executeUpdate();
+            if(flag2 > 0) {
+                return true ;
+            }else{
+                return false;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }

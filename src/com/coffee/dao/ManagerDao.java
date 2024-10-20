@@ -21,4 +21,7 @@ public interface ManagerDao {
 
     //更新订单状态
     public  void updateStatus(int orderId);
+
+    //增加商品
+    public boolean addGoods(String name, Float price, int num,String img,String msg);
 }

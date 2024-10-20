@@ -74,7 +74,7 @@
 
 <div class="product-detail-container">
     <div class="product-images">
-        <img src="img/<%=g.getImage()%>.jpg" alt="商品主图" class="main-image">
+        <img src="img/<%=g.getImage()%>" alt="商品主图" class="main-image">
     </div>
     <div class="product-info">
         <h1 class="product-name"><%=g.getName()%></h1>

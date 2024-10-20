@@ -9,6 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>库存管理</title>
     <link rel="stylesheet" href="style/car.css">
+    <style>
+        .add{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,6 +36,7 @@
 </header>
 
 <div class="cart-container">
+    <button class="add"><a href="addGood.jsp">添加商品</a></button>
     <% if (list.isEmpty()) { %>
     <h1>库存无商品，快去添加吧</h1>
     <% } else { %>
@@ -39,7 +52,7 @@
         <div class="check-and-image">
             <input type="checkbox" class="item-checkbox">
             <a class="product-photo-link">
-                <img src="img/<%= img %>.jpg" alt="商品图片" class="item-image">
+                <img src="img/<%= img %>" alt="商品图片" class="item-image">
             </a>
         </div>
         <div class="item-details">
