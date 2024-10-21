@@ -6,16 +6,14 @@ public class GoodsCar {
     private float price;
     private int num;
     private String image;
-    private int selfnum;
     private String cartable;
 
-    public GoodsCar(int id, String name, float price, int num, String image, int selfnum, String cartable) {
+    public GoodsCar(int id, String name, float price, int num, String image, String cartable) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.num = num;
         this.image = image;
-        this.selfnum = selfnum;
         this.cartable = cartable;
     }
     public GoodsCar(){
@@ -61,13 +59,6 @@ public class GoodsCar {
         this.image = image;
     }
 
-    public int getSelfnum() {
-        return selfnum;
-    }
-
-    public void setSelfnum(int selfnum) {
-        this.selfnum = selfnum;
-    }
 
     public String getCartable() {
         return cartable;

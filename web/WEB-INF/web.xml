@@ -109,4 +109,12 @@
         <servlet-name>DeleteAllServlet</servlet-name>
         <url-pattern>/DeleteAllServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ChangeCartNumServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.ChangeCartNumServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeCartNumServlet</servlet-name>
+        <url-pattern>/ChangeCartNumServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

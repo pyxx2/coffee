@@ -21,13 +21,13 @@ public class SuccessServlet extends HttpServlet {
         int selfnum = Integer.parseInt(req.getParameter("selfnum"));
         UserDao ud = new UserDaoImpl();
         GoodsCar gc = ud.UpdateToGoodsCar(g,userName);
-        gc.setSelfnum(ud.selectGoodsCarSelfNum(gc));
+        gc.setNum(ud.selectGoodsCarSelfNum(gc));
         boolean flag = false;
-        if (gc.getSelfnum()>0){
+        if (gc.getNum()>0){
             flag = ud.UpdateGoodsCar(gc, selfnum);
         }else{
 
-            gc.setSelfnum(selfnum);
+            gc.setNum(selfnum);
             flag = ud.AddGoodsCar(gc);
         }
         if (flag) {

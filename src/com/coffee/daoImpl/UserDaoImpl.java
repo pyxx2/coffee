@@ -83,8 +83,7 @@ public class UserDaoImpl implements UserDao {
                 "name varchar(255)," +
                 "price decimal," +
                 "num int," +
-                "image varchar(255)," +
-                "selfnum int)";
+                "image varchar(255),";
         try {
             ps = con.prepareStatement(sql);
             int flag = ps.executeUpdate();
@@ -117,13 +116,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean UpdateGoodsCar(GoodsCar gc, int selfnum) {
+    public boolean UpdateGoodsCar(GoodsCar gc, int num) {
         DBConnection db = new DBConnection();
         con=db.getCon();
-        String sql = "update "+gc.getCartable()+" set selfnum=? where id = ?";
+        String sql = "update "+gc.getCartable()+" set num=? where id = ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(1,gc.getSelfnum()+selfnum);
+            ps.setInt(1,gc.getNum()+num);
             ps.setInt(2,gc.getId());
             int flag = ps.executeUpdate();
             if(flag > 0) {
@@ -168,7 +167,7 @@ public class UserDaoImpl implements UserDao {
             ps.setInt(1, gc.getId());
             rs = ps.executeQuery();
             if(rs.next()) {
-                return rs.getInt("selfnum");
+                return rs.getInt("num");
             }
         }catch(SQLException e) {
             throw new RuntimeException(e);
@@ -249,7 +248,7 @@ public class UserDaoImpl implements UserDao {
     public GoodsCar UpdateToGoodsCar(int goodsid,String userName) {
         User u = selectUser(userName);
         Goods g = selectGoods(goodsid);
-        GoodsCar gc = new GoodsCar(g.getId(), g.getName(), g.getPrice(), g.getNum(), g.getImage(), 1,u.getCartable());
+        GoodsCar gc = new GoodsCar(g.getId(), g.getName(), g.getPrice(), g.getNum(), g.getImage(),u.getCartable());
         return gc;
     }
 
@@ -258,7 +257,7 @@ public class UserDaoImpl implements UserDao {
         DBConnection db = new DBConnection();
         con=db.getCon();
 
-        String sql="insert into "+gc.getCartable()+" values(?,?,?,?,?,?)";
+        String sql="insert into "+gc.getCartable()+" values(?,?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1,gc.getId());
@@ -266,7 +265,6 @@ public class UserDaoImpl implements UserDao {
             ps.setFloat(3,gc.getPrice());
             ps.setInt(4,gc.getNum());
             ps.setString(5,gc.getImage());
-            ps.setInt(6,gc.getSelfnum());
             int flag = ps.executeUpdate();
             if(flag > 0) {
                 return true;
@@ -296,7 +294,7 @@ public class UserDaoImpl implements UserDao {
                     gc.setPrice(rs.getFloat("price"));
                     gc.setNum(rs.getInt("num"));
                     gc.setImage(rs.getString("image"));
-                    gc.setSelfnum(rs.getInt("selfnum"));
+                    gc.setNum(rs.getInt("num"));
                     gc.setCartable(ct);
 
                     list.add(gc);
@@ -401,6 +399,22 @@ public class UserDaoImpl implements UserDao {
             throw new RuntimeException(e);
         }
         return cartId;
+    }
+
+    @Override
+    public void changeNum(int goodsId, int num, String ct) {
+        DBConnection db = new DBConnection();
+        con=db.getCon();
+        String sql = "UPDATE " + ct + " SET num=? WHERE id=?";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1,num);
+            ps.setInt(2,goodsId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

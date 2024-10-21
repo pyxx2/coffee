@@ -29,7 +29,7 @@
 
 
     <div class="header-logo">
-        <a href="index2.jsp?userName=<%=userName%>">返回商城首页</a>
+        <a href="shopping.jsp?userName=<%=userName%>">返回商城首页</a>
     </div>
 </header>
 <section class="a">

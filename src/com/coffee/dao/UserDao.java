@@ -51,4 +51,7 @@ public interface UserDao {
 
     //通过username查找购物车
     public String selectCartIdByName(String userName);
+
+    //修改数量
+    public void changeNum(int goodsId, int num,String ct);
 }
