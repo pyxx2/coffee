@@ -25,6 +25,18 @@
 <body>
 
 <%
+    String deleteMessage = (String) request.getAttribute("deleteMessage");
+    if (deleteMessage != null) {
+%>
+<script>
+    alert("<%= deleteMessage %>");
+</script>
+<%
+    }
+%>
+
+
+<%
     ManagerDao md = new ManagerDaoImpl();
     ArrayList<Goods> list = md.selectAllGoods();
 %>
@@ -67,7 +79,7 @@
                 <p style="font-size: larger">￥<%= price %></p>
                 <div class="action-buttons">
                     <button class="btn-remove">
-                        <a href="DeleteServlet?goodscarid=<%= goodsid %>" style="text-decoration: none;color: white;">删除</a>
+                        <a href="DeleteAllServlet?goodsId=<%= goodsid %>" style="text-decoration: none;color: white;">删除</a>
                     </button>
                 </div>
             </div>

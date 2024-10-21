@@ -158,5 +158,22 @@ public class ManagerDaoImpl implements ManagerDao {
         }
     }
 
+    @Override
+    public boolean deleteGoods(int goodId) {
+        DBConnection db = new DBConnection();
+        con=db.getCon();
+        String sql="delete from goods where id = ?";
+        try{
+            ps = con.prepareStatement(sql);
+            ps.setInt(1,goodId);
+            int flag = ps.executeUpdate();
+            if(flag > 0) {
+                return true ;
+            }else return false;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

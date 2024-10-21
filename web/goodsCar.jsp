@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.coffee.daoImpl.UserDaoImpl" %>
 <%@ page import="com.coffee.dao.UserDao" %>
+<%@ page import="com.coffee.vo.Goods" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -48,6 +49,10 @@
     <%  for(GoodsCar gc:gcs){
         i++;
         int goodsid = gc.getId();
+        boolean flag=ud.selectFromStore(goodsid);
+        if(!flag){
+            boolean flag1=ud.delete(ct,goodsid);
+        }else {
     %>
     <div class="list-container">
         <div class="check-and-image">
@@ -71,7 +76,7 @@
             </div>
         </div>
     </div>
-    <%}}%>
+    <%}}}%>
     <div class="fixed-window">
         <div class="total-info">
             <span class="label">合计：</span>

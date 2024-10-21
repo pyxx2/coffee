@@ -43,10 +43,14 @@ public class AddGoodsServlet extends HttpServlet {
 
             // 这里进行数据库的插入操作，例如调用 OrderDaoImpl 来保存商品信息
             ManagerDao md=new ManagerDaoImpl();
-            md.addGoods(goodsName,price,num,image,message);
+            boolean flag=md.addGoods(goodsName,price,num,image,message);
+            if (flag){
+                request.setAttribute("deleteMessage", "商品已成功添加");
+                request.getRequestDispatcher("manageStore.jsp").forward(request, response);
+                // 返回成功响应
+                response.getWriter().write("商品添加成功！");
+            }
 
-            // 返回成功响应
-            response.getWriter().write("商品添加成功！");
         } catch (NumberFormatException e) {
             e.printStackTrace();
             // 捕获转换失败的异常，返回错误信息

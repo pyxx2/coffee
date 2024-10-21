@@ -29,6 +29,8 @@ public interface UserDao {
 
     //查询商品
     public Goods selectGoods(int id);
+    //检查商品是否还出售
+    public boolean selectFromStore(int id);
 
     //转换类对象
     public GoodsCar UpdateToGoodsCar(int g,String userName);

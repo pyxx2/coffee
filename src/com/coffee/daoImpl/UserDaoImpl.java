@@ -19,6 +19,8 @@ public class UserDaoImpl implements UserDao {
     public PreparedStatement ps;
     public ResultSet rs;
 
+
+
     @Override
     public boolean login(String name, String password) {
         boolean flag = false;
@@ -227,6 +229,23 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public boolean selectFromStore(int id) {
+        DBConnection db = new DBConnection();
+        con=db.getCon();
+        String sql="select * from goods where id = ?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                return true;
+            }else return false;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public GoodsCar UpdateToGoodsCar(int goodsid,String userName) {
         User u = selectUser(userName);
         Goods g = selectGoods(goodsid);
@@ -264,21 +283,24 @@ public class UserDaoImpl implements UserDao {
 
         DBConnection db = new DBConnection();
         con=db.getCon();
-
+        int id=0;
         String sql="select * from "+ct;
         try {
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while(rs.next()) {
                 GoodsCar gc = new GoodsCar();
-                gc.setId(rs.getInt("id"));
-                gc.setName(rs.getString("name"));
-                gc.setPrice(rs.getFloat("price"));
-                gc.setNum(rs.getInt("num"));
-                gc.setImage(rs.getString("image"));
-                gc.setSelfnum(rs.getInt("selfnum"));
-                gc.setCartable(ct);
-                list.add(gc);
+
+                    gc.setId(rs.getInt("id"));
+                    gc.setName(rs.getString("name"));
+                    gc.setPrice(rs.getFloat("price"));
+                    gc.setNum(rs.getInt("num"));
+                    gc.setImage(rs.getString("image"));
+                    gc.setSelfnum(rs.getInt("selfnum"));
+                    gc.setCartable(ct);
+
+                    list.add(gc);
+
             }
         }catch(SQLException e) {
             throw new RuntimeException(e);

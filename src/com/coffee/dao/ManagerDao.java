@@ -24,4 +24,7 @@ public interface ManagerDao {
 
     //增加商品
     public boolean addGoods(String name, Float price, int num,String img,String msg);
+
+    //删除商品
+    public boolean deleteGoods(int goodId);
 }

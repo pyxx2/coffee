@@ -101,4 +101,12 @@
         <servlet-name>AddGoodsServlet</servlet-name>
         <url-pattern>/AddGoodsServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteAllServlet</servlet-name>
+        <servlet-class>com.coffee.servlet.DeleteAllServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAllServlet</servlet-name>
+        <url-pattern>/DeleteAllServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
