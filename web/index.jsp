@@ -31,15 +31,6 @@
     <div>
         <ul class="navigation">
             <li><a href="homepage.jsp">首页</a></li>
-            <li><a href="#">饮品分类</a>
-                <ul>
-                    <li><a href="player2.jsp">柠檬茶</a></li>
-                    <li><a href="player5.jsp">生椰家族</a></li>
-                    <li><a href="player3.jsp">丝绒拿铁</a></li>
-                    <li><a href="player4.jsp">美式家族</a></li>
-                    <li><a href="player6.jsp">甜品小点</a></li>
-                </ul>
-            </li>
             <li><a href="#">我的</a>
                 <ul>
                     <li><a href="goodsCar.jsp?userName=<%=userName%>">购物车</a></li>
@@ -65,19 +56,19 @@
     </div>
     <div class="member-part">
         <div class="cpBox">
-            <a href="player1.jsp"><img src="img/s1.jpg"></a>
+            <a ><img src="img/s1.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player2.jsp"><img src="img/s2.jpg"></a>
+            <a ><img src="img/s2.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player5.jsp"><img src="img/s3.jpg"></a>
+            <a ><img src="img/s3.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player4.jsp"><img src="img/s4.jpg"></a>
+            <a ><img src="img/s4.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player5.jsp"><img src="img/s5.jpg"></a>
+            <a ><img src="img/s5.jpg"></a>
         </div>
     </div>
 </div>
@@ -88,14 +79,14 @@
     <div class="movie-right">
         <h3>小黄油拿铁</h3><br>
         <p>进口新西兰黄油 | 香醇不腻 | 内测第一</p><br>
-        <a href="first.jsp"><i>点击购买</i></a>
+
     </div>
 </div>
 <div class="mall">
     <div class="mall-left">
         <div class="mall-content1">刘亦菲同款 | 热量约为2个苹果</div><br>
         <div class="mall-content2" style="margin-top: 40px">轻轻茉莉轻乳茶</div><br>
-        <a href="index1.jsp"><button class="goods">点击购买</button></a>
+
     </div>
     <div class="mall-right">
         <img src="img/liuyifei.jpg">
