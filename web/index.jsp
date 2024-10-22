@@ -27,7 +27,7 @@
     }
 %>
 <header>
-    <img class="disney-logo" src="image/logo.png">
+    <img class="disney-logo" src="img/logo2.png">
     <div>
         <ul class="navigation">
             <li><a href="homepage.jsp">首页</a></li>
@@ -53,9 +53,9 @@
 <div class="banner-container">
     <!-- 创建图片存储容器 -->
     <div class="banner-img-container">
-        <img src="image/rolling1.jpg" alt="">
-        <img src="image/rolling2.jpeg" alt="">
-        <img src="image/rolling3.jpg" alt="">
+        <img src="img/rolling1.jpg" alt="">
+        <img src="img/rolling2.jpeg" alt="">
+        <img src="img/rolling3.jpg" alt="">
     </div>
 </div>
 <div class="member">
@@ -65,25 +65,25 @@
     </div>
     <div class="member-part">
         <div class="cpBox">
-            <a href="player1.jsp"><img src="image/s1.jpg"></a>
+            <a href="player1.jsp"><img src="img/s1.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player2.jsp"><img src="image/s2.jpg"></a>
+            <a href="player2.jsp"><img src="img/s2.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player5.jsp"><img src="image/s3.jpg"></a>
+            <a href="player5.jsp"><img src="img/s3.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player4.jsp"><img src="image/s4.jpg"></a>
+            <a href="player4.jsp"><img src="img/s4.jpg"></a>
         </div>
         <div class="cpBox">
-            <a href="player5.jsp"><img src="image/s5.jpg"></a>
+            <a href="player5.jsp"><img src="img/s5.jpg"></a>
         </div>
     </div>
 </div>
 <div class="movies">
     <div class="movie-left">
-        <img src="image/xinpin.jpg">
+        <img src="img/xinpin.jpg">
     </div>
     <div class="movie-right">
         <h3>小黄油拿铁</h3><br>
@@ -98,7 +98,7 @@
         <a href="index1.jsp"><button class="goods">点击购买</button></a>
     </div>
     <div class="mall-right">
-        <img src="image/liuyifei.jpg">
+        <img src="img/liuyifei.jpg">
     </div>
 </div>
 <div class="park">
@@ -114,7 +114,7 @@
     </div>
     <div class="shanghai">
         <a href="Shanghai.jsp">
-            <img class="park-picture" src="image/about.jpg"><br>
+            <img class="park-picture" src="img/about.jpg"><br>
             <h3>品牌使命</h3><br>
             <p>瑞幸咖啡以“创造幸运时刻，激发美好生活热望”为使命，为顾客创造幸运时刻。</p><br>
 
@@ -122,7 +122,7 @@
     </div>
     <div class="hongkong">
         <a href="Hongkong.jsp">
-            <img class="park-picture" src="image/about2.png"><br>
+            <img class="park-picture" src="img/about2.png"><br>
             <h3>品牌愿景</h3><br>
             <p>瑞幸咖啡始终致力于以新质生产力赋能行业品质升级，引领行业发展新趋势</p><br>
 
@@ -130,9 +130,9 @@
     </div>
 </div>
 <div class="footer">
-    <img class="footer1" src="image/logo.png">
-    <img src="image/code2.jpg" style="width: 100px; height: 100px;">
-    <img class="footer3" src="image/code.jpg">
+    <img class="footer1" src="img/logo2.png">
+    <img src="img/code2.jpg" style="width: 100px; height: 100px;">
+    <img class="footer3" src="img/code.jpg">
     <table class="footer4">
         <tr>
             <td>制作人：潘雅熙 </td>

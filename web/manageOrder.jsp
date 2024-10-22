@@ -14,80 +14,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>订单管理</title>
     <link rel="stylesheet" href="style/car.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #009688;
+            padding: 10px;
+            color: white;
+            text-align: right;
+        }
+
+        .header-logo a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .cart-container {
+            margin-top: 20px;
+        }
+
+        .list-container {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-name-and-price {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* 让此部分占据剩余空间 */
+        }
+
+        .complete-order-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-left: auto; /* 将按钮推到右侧 */
+        }
+
+        .complete-order-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 600px) {
+            .item-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-name-and-price {
+                align-items: flex-start;
+            }
+
+            .header-logo a {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <%
-    ManagerDao md=new ManagerDaoImpl();
-    ArrayList<Order> orderlist=md.selectAllOrder();
+    ManagerDao md = new ManagerDaoImpl();
+    ArrayList<Order> orderlist = md.selectAllOrder();
     int i = 0;
 %>
 <header>
     <div class="header-logo">
-        <a href="manage.jsp" style="color: #FFFfff">返回</a>
+        <a href="manage.jsp">返回</a>
     </div>
 </header>
 <%
-    if(orderlist.isEmpty()){
+    if(orderlist.isEmpty()) {
 %>
 <div class="cart-container">
     <h1>无订单记录</h1>
 </div>
 <%
-}else{
+} else {
 %>
 <div class="cart-container">
-    <%  for(Order order:orderlist){
+    <% for(Order order : orderlist) {
         i++;
         int orderId = order.getOrderId();
         int goodsId = order.getGoodsId();
         String userName = order.getUserName();
-        UserDao ud=new UserDaoImpl();
-        Goods good=ud.selectGoods(goodsId);
-        //获取商品名称
-        String goodName=good.getName();
+        UserDao ud = new UserDaoImpl();
+        Goods good = ud.selectGoods(goodsId);
+        String goodName = good.getName();
     %>
     <div class="list-container">
         <div class="item-details">
             <div class="item-name-and-price">
-                <h3 style="margin-right: 30px">订单编号：<%=orderId%>   </h3>
-                <h3 style="margin-right: 30px;color: #df5000">用户：<%=userName%>   </h3>
-                <h3 style="margin-right: 30px;color: #000000"><%=goodName%></h3>
-                <h3 style="margin-right: 30px">数量：<%=order.getNum()%></h3>
-                <h3 style="margin-right: 50px;color: #190e5f">状态：<%=order.getStatus()%></h3>
-                <p class="item-price" style="color: red">￥<%=order.getPrice()%></p>
+                <h3>订单编号：<%=orderId%></h3>
+                <h3 style="color: #df5000;">用户：<%=userName%></h3>
+                <h3><%=goodName%></h3>
+                <h3>数量：<%=order.getNum()%></h3>
+                <h3 style="color: #190e5f;">状态：<%=order.getStatus()%></h3>
+                <p class="item-price" style="color: red;margin-left: 50px">￥<%=order.getPrice()%></p>
                 <h5>时间：<%=order.getOrderTime()%></h5>
-
-                <!-- 添加完成订单按钮 -->
-                <button class="complete-order-btn" data-order-id="<%=orderId%>">完成订单</button>
             </div>
+            <button class="complete-order-btn" data-order-id="<%=orderId%>">完成订单</button>
         </div>
     </div>
-    <%}}%>
+    <% }} %>
 </div>
 <script>
-    // 监听所有完成订单按钮的点击事件
     document.querySelectorAll('.complete-order-btn').forEach(button => {
         button.addEventListener('click', function() {
-            // 获取当前按钮的订单ID
             const orderId = this.getAttribute('data-order-id');
 
-            // 打印orderId，确保值正确
-            console.log("Sending orderId:", orderId);
-
-            // 验证 orderId 是否为空或 undefined
             if (!orderId) {
                 console.error("orderId is empty or undefined");
-                return;  // 如果为空，停止执行
+                return;
             }
 
-            // 发送请求到 UpdateOrderServlet
-            const requestUrl = `UpdateOrderServlet?orderId=`+orderId;
-            console.log("Request URL:", requestUrl);  // 打印最终的请求URL
+            const requestUrl = `UpdateOrderServlet?orderId=` + orderId;
 
-            fetch(requestUrl, {
-                method: 'GET'
-            })
+            fetch(requestUrl, { method: 'GET' })
                 .then(response => {
                     if (response.ok) {
                         alert('订单状态已更新为已完成');
@@ -102,8 +164,6 @@
                 });
         });
     });
-
-
 </script>
 </body>
 </html>

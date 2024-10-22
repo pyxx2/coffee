@@ -10,7 +10,14 @@
     <title>库存管理</title>
     <link rel="stylesheet" href="style/car.css">
     <style>
-        .add{
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(245, 245, 245);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .add {
             background-color: #4CAF50; /* Green */
             border: none;
             color: white;
@@ -18,7 +25,90 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 10px;
+            font-size: 14px;
+            margin-bottom: 20px; /* 为按钮添加底部间距 */
+        }
+
+        .cart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* 为每个商品之间添加间距 */
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.68);
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .check-and-image {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-image {
+            width: 80px; /* 设置图片宽度 */
+            height: auto; /* 自适应高度 */
+        }
+
+        .item-details {
+            flex-grow: 1; /* 占据剩余空间 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-name-and-price {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* 占据剩余空间 */
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-remove {
+            background-color: #f44336; /* 红色背景 */
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 768px) {
+            .list-container {
+                flex-direction: column;
+                align-items: flex-start; /* 左对齐 */
+            }
+
+            .item-details {
+                flex-direction: column;
+                align-items: flex-start; /* 左对齐 */
+            }
+
+            .item-image {
+                width: 100%; /* 图片自适应宽度 */
+                height: auto; /* 自适应高度 */
+            }
+
+            .add {
+                width: 100%; /* 按钮占满宽度 */
+                font-size: 12px; /* 调整按钮字体大小 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .add {
+                font-size: 10px; /* 更小的按钮字体大小 */
+            }
         }
     </style>
 </head>
@@ -35,7 +125,6 @@
     }
 %>
 
-
 <%
     ManagerDao md = new ManagerDaoImpl();
     ArrayList<Goods> list = md.selectAllGoods();
@@ -48,7 +137,7 @@
 </header>
 
 <div class="cart-container">
-    <button class="add"><a href="addGood.jsp">添加商品</a></button>
+    <button class="add"><a href="addGood.jsp" style="color: white; text-decoration: none;">添加商品</a></button>
     <% if (list.isEmpty()) { %>
     <h1>库存无商品，快去添加吧</h1>
     <% } else { %>
@@ -77,17 +166,18 @@
                 </div>
                 <p style="margin-right: 30px"><%= msg %></p>
                 <p style="font-size: larger">￥<%= price %></p>
-                <div class="action-buttons">
-                    <button class="btn-remove">
-                        <a href="DeleteAllServlet?goodsId=<%= goodsid %>" style="text-decoration: none;color: white;">删除</a>
-                    </button>
-                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-remove">
+                    <a href="DeleteAllServlet?goodsId=<%= goodsid %>" style="text-decoration: none;color: white;">删除</a>
+                </button>
             </div>
         </div>
     </div>
     <% } %>
     <% } %>
 </div>
+
 <script src="style/store.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
