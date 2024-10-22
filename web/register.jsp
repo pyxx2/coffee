@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>用户注册页面</title>
     <link rel="stylesheet" href="style/register.css">
+        <script type="text/javascript">
+            window.onload = function() {
+                // 检查是否有错误信息，并弹出提示框
+                var errorMessage = "<%= request.getAttribute("error") %>";
+                if (errorMessage !== "null" && errorMessage !== "") {
+                    alert(errorMessage);
+                }
+            };
+        </script>
 </head>
 <body>
 <header>

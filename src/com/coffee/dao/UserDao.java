@@ -13,6 +13,9 @@ public interface UserDao {
     //增加用户
     public String[] AddUser(User u);
 
+    //有无重复用户名
+    public boolean checkUserName(String name);
+
     //增加表单
     public boolean AddTable(String cartable);
 
@@ -43,8 +46,6 @@ public interface UserDao {
 
     //找对应的id
     public int selectIdByUserName(String userName);
-    //找对应的username
-    public String selectNameById(int id);
 
     //删除购物车
     public boolean delete(String ct,int id);

@@ -61,7 +61,7 @@
             %>
             <div class="goods">
                 <div class="pic">
-                    <a href="BookingServlet?userid=<%=userName%>&goodsid=<%=gs.getId()%>" class="product-photo-link">
+                    <a href="BookingServlet?userName=<%=userName%>&goodsid=<%=gs.getId()%>" class="product-photo-link">
                         <img src="img/<%=gs.getImage()%>" alt="商品图片" class="product-photo">
                     </a>
                 </div>

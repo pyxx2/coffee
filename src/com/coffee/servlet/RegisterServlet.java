@@ -14,8 +14,15 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = 1;
+        UserDao ud = new UserDaoImpl();
         String name = req.getParameter("username");
-        System.out.printf(name);
+        boolean check=ud.checkUserName(name); //找到了一样的用户名，则为true
+        if(check){//找到了，在注册界面register.jsp，弹窗“该用户名已被使用”
+            // 用户名已存在，提示用户
+            req.setAttribute("error", "注册失败，用户名已存在。");
+            req.getRequestDispatcher("register.jsp").forward(req, resp);
+            return; // 直接返回，避免继续执行下面的代码
+        }
         String tel = req.getParameter("tel");
         String p1 = req.getParameter("pwd1");
         String p2 = req.getParameter("pwd2");
@@ -24,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
         String[] flag = {null,null};
         if (passwordsMatch) {
             User u = new User(id, name, tel, p1, cartable);
-            UserDao ud = new UserDaoImpl();
+
             flag = ud.AddUser(u);
             if (flag[1].equals("true")) {
                 id = Integer.parseInt(flag[0]);

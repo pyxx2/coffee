@@ -76,14 +76,34 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public boolean checkUserName(String name) {
+        DBConnection db=new DBConnection();
+        con=db.getCon();
+        String sql="select * from user where name=?";
+        try {
+            ps=con.prepareStatement(sql);
+            ps.setString(1,name);
+            rs=ps.executeQuery();
+            if(rs.next()) {
+                return true;
+            }else return false;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public boolean AddTable(String cartable) {
         DBConnection db = new DBConnection();
-        con=db.getCon();
-        String sql="create table "+cartable+"(id int not null unique," +
-                "name varchar(255)," +
-                "price decimal," +
-                "num int," +
-                "image varchar(255),";
+        con = db.getCon();
+        String sql = "CREATE TABLE " + cartable + " ("
+                + "id INT NOT NULL UNIQUE, "
+                + "name VARCHAR(255), "
+                + "price DECIMAL(10, 2), "  // 确保 decimal 的定义是完整的，通常指定精度
+                + "num INT, "
+                + "image VARCHAR(255) "
+                + ");";  // 结束括号和分号
+
         try {
             ps = con.prepareStatement(sql);
             int flag = ps.executeUpdate();
@@ -92,6 +112,7 @@ public class UserDaoImpl implements UserDao {
         }
         return true;
     }
+
 
     @Override
     public boolean UpdateUser(User u) {
@@ -334,34 +355,6 @@ public class UserDaoImpl implements UserDao {
         return userId;
     }
 
-    @Override
-    public String selectNameById(int id) {
-        DBConnection db = new DBConnection();
-        con = db.getCon();
-
-        String userName=null; // 默认值
-        String sql = "SELECT name FROM user WHERE id = ?"; // 确保表名和字段名正确
-        try {
-            ps = con.prepareStatement(sql);
-            ps.setInt(1, id); // 设置参数
-            rs = ps.executeQuery(); // 执行查询
-            if (rs.next()) {
-                userName = rs.getString("name");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace(); // 打印堆栈跟踪以帮助调试
-        } finally {
-            // 关闭资源，防止内存泄漏
-            try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return userName;
-    }
 
     @Override
     public boolean delete(String ct, int id) {
