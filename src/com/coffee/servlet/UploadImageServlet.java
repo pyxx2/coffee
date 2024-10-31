@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @MultipartConfig // 处理文件上传
 public class UploadImageServlet extends HttpServlet {
-    private static final String UPLOAD_DIR = "E:\\IDEA_code\\coffee\\web\\img";
+    private static final String UPLOAD_DIR = "C:\\Users\\Administrator\\Downloads\\apache-tomcat-9.0.96-windows-x64\\apache-tomcat-9.0.96\\webapps\\unnamed\\img";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
@@ -61,3 +61,4 @@ public class UploadImageServlet extends HttpServlet {
         return null;
     }
 }
+
